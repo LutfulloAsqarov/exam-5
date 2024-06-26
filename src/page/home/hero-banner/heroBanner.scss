@@ -1,6 +1,7 @@
 .banner {
     transform: translateY(-30%);
     background: #fff;
+    z-index: 1;
     &__cards {
         // display: flex;
         display: grid;
