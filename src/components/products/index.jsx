@@ -11,22 +11,22 @@ import "./products.scss";
 const Products = ({ product }) => {
     let rating = product.rating.rate;
 
-    function getRating() {
+    function getRating(id) {
         let res = [];
         for (let i = 0; i < Math.trunc(rating); i++) {
-            res.push(<FaStar key={product.id} color="gold" />);
+            res.push(<FaStar key={i} color="gold" />);
         }
         if (rating % 1 > 0.4) {
-            res.push(<FaStarHalfAlt key={product.id} color="gold" />);
+            res.push(<FaStarHalfAlt key={id} color="gold" />);
         }
         for (let i = Math.round(rating); i < 5; i++) {
-            res.push(<FaRegStar key={product.id} color="gold" />);
+            res.push(<FaRegStar key={i} color="gold" />);
         }
         return res;
     }
 
     return (
-        <div className="products__card">
+        <div key={product.id} className="products__card">
             <div className="products__card__img">
                 <Link>
                     <img src={product.image} alt="" />
@@ -45,7 +45,7 @@ const Products = ({ product }) => {
                     {product.title}
                 </h3>
                 <div className="products__card__rating">
-                    <div>{getRating()}</div>
+                    <div>{getRating(product.title)}</div>
                     <p>{product.rating.rate}</p>
                 </div>
                 <div className="products__card__price">

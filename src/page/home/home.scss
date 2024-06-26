@@ -1,0 +1,19 @@
+.categories {
+    &__list {
+        display: flex;
+        // justify-content: center;
+        padding: 20px 0;
+        gap: 30px;
+        text-wrap: nowrap;
+        overflow: auto;
+        scrollbar-width: none;
+    }
+    &__item {
+        cursor: pointer;
+        user-select: none;
+    }
+    .active {
+        color: #33a0ff;
+        border-bottom: 2px solid #33a0ff;
+    }
+}

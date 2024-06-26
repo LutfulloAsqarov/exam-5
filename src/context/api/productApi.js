@@ -3,11 +3,16 @@ import { api } from "./index";
 export const productApi = api.injectEndpoints({
     endpoints: (build) => ({
         getProducts: build.query({
-            query: (params) => ({
-                url: "/products",
-                params,
+            query: () => ({
+                url: `/products`,
             }),
             providesTags: ["Product"],
+        }),
+        getProductsCategory: build.query({
+            query: ({ category }) => ({
+                url: `/products${category}`,
+            }),
+            invalidatesTags: ["Product"],
         }),
         getProductsCategories: build.query({
             query: (params) => ({
@@ -50,6 +55,7 @@ export const productApi = api.injectEndpoints({
 
 export const {
     useGetProductsQuery,
+    useGetProductsCategoryQuery,
     useGetProductsCategoriesQuery,
     useCreateProductMutation,
     useDeleteProductMutation,

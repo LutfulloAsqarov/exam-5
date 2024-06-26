@@ -1,0 +1,83 @@
+.shop {
+    background-color: #40bfff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+    border-radius: 10px;
+
+    &__left {
+        width: 50%;
+
+        &__title {
+            font-size: 55px;
+            font-weight: 500;
+            text-align: left;
+            color: #fff;
+        }
+
+        &__text {
+            font-size: 24px;
+            font-weight: 400;
+            text-align: left;
+            color: #fff;
+            padding: 10px 0px;
+        }
+
+        &__btn {
+            border: none;
+            background: transparent;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 30px;
+            text-align: left;
+            color: #fff;
+            border-bottom: 1px solid white;
+        }
+    }
+
+    &__right {
+        width: 50%;
+        img {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 1072px) {
+        &__left__title {
+            font-size: 30px;
+        }
+
+        &__left__text {
+            font-size: 18px;
+            padding: 12px 0px;
+        }
+    }
+
+    @media (max-width: 890px) {
+        flex-direction: column;
+        padding: 10px;
+
+        &__left {
+            width: 100%;
+        }
+
+        &__right {
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 460px) {
+        &__left__title {
+            font-size: 22px;
+        }
+
+        &__left__text {
+            font-size: 14px;
+            padding: 12px 0px;
+        }
+        &__left__btn {
+            font-size: 14px;
+        }
+    }
+}
