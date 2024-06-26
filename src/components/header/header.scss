@@ -11,6 +11,7 @@
         &__left {
             select {
                 border: none;
+                background: transparent;
             }
         }
         &__right {
@@ -122,6 +123,11 @@
             }
             &__bar-close {
                 display: block;
+            }
+        }
+        @media (max-width: 450px) {
+            &__list {
+                width: 80%;
             }
         }
     }
