@@ -10,13 +10,13 @@ export const HERO_BANNER = [
         bg: banner1,
     },
     {
-        id: 1,
+        id: 2,
         title: "FS - QUILTED MAXI CROSS BAG",
         price: 299.43,
         bg: banner2,
     },
     {
-        id: 1,
+        id: 3,
         title: "FS - QUILTED MAXI CROSS BAG",
         price: 299.43,
         bg: banner3,
