@@ -1,0 +1,65 @@
+.banner {
+    transform: translateY(-30%);
+    background: #fff;
+    &__cards {
+        // display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &__card {
+        padding: 20px;
+        height: 300px;
+        width: 100%;
+        color: #223263;
+        // textAlign: "center",
+        &__info {
+            display: flex;
+            // align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            // gap: 50px;
+            h3 {
+                font-size: 20px;
+            }
+        }
+        &__price {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            &-discount {
+                span:first-child {
+                    text-decoration: line-through;
+                }
+                span:last-child {
+                    color: #fb7181;
+                    font-size: 18px;
+                }
+            }
+            p:last-child {
+                color: #40bfff;
+                font-size: 30px;
+                font-weight: 600;
+            }
+        }
+    }
+    @media (max-width: 1000px) {
+        &__card {
+            height: 250px;
+            &__price {
+                flex-direction: column-reverse;
+                align-items: start;
+            }
+        }
+    }
+    @media (max-width: 900px) {
+        &__cards {
+            justify-content: start;
+            overflow: auto;
+            scrollbar-width: none;
+        }
+        &__card {
+            min-width: 265px;
+        }
+    }
+}
