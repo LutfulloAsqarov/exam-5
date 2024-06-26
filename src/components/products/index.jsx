@@ -26,16 +26,22 @@ const Products = ({ data }) => {
                         </div>
                     </div>
                     <div className="products__card__info">
-                        <h3 className="products__card__title">
+                        <h3
+                            className="products__card__title"
+                            title={product.title}
+                        >
                             {product.title}
                         </h3>
                         <div className="products__card__rating">
                             {/* <img src={star} alt="" /> */}
-                            <FaStar color="gold" />
-                            <FaStar color="gold" />
-                            <FaStar color="gold" />
-                            <FaStar color="gold" />
-                            <FaStar color="gold" />
+                            <div>
+                                <FaStar color="gold" />
+                                <FaStar color="gold" />
+                                <FaStar color="gold" />
+                                <FaStar color="gold" />
+                                <FaStar color="gold" />
+                            </div>
+                            <p>{product.rating.rate}</p>
                         </div>
                         <div className="products__card__price">
                             <p>${product.price}</p>
