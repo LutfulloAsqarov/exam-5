@@ -11,6 +11,7 @@ import News from "./news";
 import Shop from "./shop";
 import "./home.scss";
 import FeaturedProducts from "./featuredProducts";
+import Service from "./service";
 
 const Home = () => {
     const [categoryValue, setCategoryValue] = useState("all");
@@ -64,6 +65,7 @@ const Home = () => {
                 </div>
             </section>
             <Shop />
+            <Service />
             <News />
             <FeaturedProducts />
         </div>

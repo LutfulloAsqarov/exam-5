@@ -36,12 +36,12 @@ input {
     text-align: center;
 
     @media (max-width: 1000px) {
-        font-size: 24px;
+        font-size: 32px;
     }
     @media (max-width: 600px) {
-        font-size: 20px;
+        font-size: 30px;
     }
     @media (max-width: 450px) {
-        font-size: 18px;
+        font-size: 28px;
     }
 }

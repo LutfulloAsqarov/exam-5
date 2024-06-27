@@ -1,11 +1,11 @@
-.shop {
+#shop {
     background-color: #40bfff;
+}
+.shop {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 50px;
     border-radius: 10px;
-
     &__left {
         width: 50%;
 

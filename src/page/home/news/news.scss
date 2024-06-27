@@ -14,6 +14,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
+        padding: 30px 0;
     }
 
     &__card {
@@ -81,12 +82,20 @@
             font-size: 25px;
             line-height: 40px;
         }
+        &__info {
+            span {
+                font-size: 14px;
+            }
+        }
+        &__desc {
+            font-size: 14px;
+        }
     }
 
     @media (max-width: 350px) {
         &__card {
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
             justify-content: center;
             align-items: center;
         }

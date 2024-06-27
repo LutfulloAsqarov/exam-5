@@ -11,9 +11,7 @@
     }
 
     &__cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        padding: 30px 0;
     }
 
     &__card {
@@ -24,7 +22,7 @@
 
     &__img {
         img {
-            width: 154px;
+            max-width: 154px;
             height: 154px;
             object-fit: contain;
         }
@@ -67,30 +65,21 @@
         }
     }
 
-    @media (max-width: 1150px) {
-        &__cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-    }
-
     @media (max-width: 830px) {
-        &__cards {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
         &__title {
             font-size: 25px;
             line-height: 40px;
+        }
+        &__oldPrice,
+        &__newPrice {
+            font-size: 16px;
         }
     }
 
     @media (max-width: 430px) {
         &__card {
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
         }
 
         &__title {
