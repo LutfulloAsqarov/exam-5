@@ -1,7 +1,7 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 
-import { useGetProductsQuery } from "../../../context/api/productApi";
+import { useGetParamsProductsQuery } from "../../../context/api/productApi";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -13,7 +13,7 @@ import "./featuredProducts.scss";
 import { Autoplay, FreeMode, Pagination } from "swiper/modules";
 
 const FeaturedProducts = () => {
-    const { data, isLoading, isSuccess } = useGetProductsQuery();
+    const { data, isLoading, isSuccess } = useGetParamsProductsQuery();
     const featureItem = data?.slice(0, 5).map((el) => (
         <SwiperSlide key={el.id}>
             <div className="feature__card">

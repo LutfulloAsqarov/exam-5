@@ -8,7 +8,9 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import logo from "../../assets/header/logo.svg";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { IoCloseOutline } from "react-icons/io5";
+
 import "./header.scss";
+import { useSelector } from "react-redux";
 
 const Header = () => {
     const [showInput, setShowInput] = useState(false);
@@ -17,6 +19,9 @@ const Header = () => {
     const [showBar, setShowBar] = useState(false);
     // const [scrollPosition, setScrollPosition] = useState(0);
     // const [showTopHeader, setShowTopHeader] = useState(true);
+
+    let wishlistData = useSelector((state) => state.wishlist.value);
+    let cartData = useSelector((state) => state.cart.value);
 
     const handleScroll = () => {
         if (window.scrollY > 50) {
@@ -57,13 +62,24 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className="header__top__item">
-                                <Link>
+                                <Link to={"/wishlist"}>
                                     <FaRegHeart />
+
+                                    {wishlistData.length ? (
+                                        <sup>{wishlistData.length}</sup>
+                                    ) : (
+                                        <></>
+                                    )}
                                 </Link>
                             </li>
                             <li className="header__top__item">
-                                <Link>
+                                <Link to={"/cart"}>
                                     <FaShoppingCart />
+                                    {cartData.length ? (
+                                        <sup>{cartData.length}</sup>
+                                    ) : (
+                                        <></>
+                                    )}
                                 </Link>
                             </li>
                         </ul>

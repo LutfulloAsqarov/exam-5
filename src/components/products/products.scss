@@ -1,9 +1,12 @@
+#products {
+    padding-bottom: 30px;
+}
 .products {
     &__cards {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
-        padding: 50px 0;
+        padding: 30px 0;
     }
     &__card {
         border: 3px solid #f6f7f8;
@@ -26,7 +29,7 @@
             position: absolute;
             top: 0;
             right: -100%;
-            background: #fff;
+            background: #ffffffe0;
             width: 100%;
             height: 100%;
             transition: 0.5s;
@@ -34,6 +37,7 @@
             align-items: center;
             justify-content: center;
             gap: 20px;
+            border: 10px solid #ddd;
             button {
                 border: 2px solid #33a0ff85;
                 background: transparent;

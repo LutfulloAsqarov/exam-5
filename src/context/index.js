@@ -1,14 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { api } from "./api";
 // import authSlice from "./slices/authSlice";
-// import wishlistSlice from "./slices/wishlistSlice";
-// import cartSlice from "./slices/cartSlice";
+import wishlistSlice from "./slice/wishlistSlice";
+import cartSlice from "./slice/cartSlice";
 
 export const store = configureStore({
     reducer: {
         // auth: authSlice,
-        // wishlist: wishlistSlice,
-        // cart: cartSlice,
+        wishlist: wishlistSlice,
+        cart: cartSlice,
         [api.reducerPath]: api.reducer,
     },
     middleware: (getDefaultMiddleware) =>

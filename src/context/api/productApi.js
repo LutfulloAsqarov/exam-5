@@ -2,19 +2,17 @@ import { api } from "./index";
 
 export const productApi = api.injectEndpoints({
     endpoints: (build) => ({
-        getProducts: build.query({
-            query: () => ({
-                url: `/products`,
-            }),
-            providesTags: ["Product"],
-        }),
-        getProductsCategory: build.query({
-            query: ({ category }) => ({
-                url: `/products${category}`,
+        getParamsProducts: build.query({
+            query: (params) => ({
+                url: `/products${params.category}`,
+                params: {
+                    limit: params.limit,
+                    page: params.page,
+                },
             }),
             invalidatesTags: ["Product"],
         }),
-        getProductsCategories: build.query({
+        getCategories: build.query({
             query: (params) => ({
                 url: "/products/categories",
                 params,
@@ -54,9 +52,9 @@ export const productApi = api.injectEndpoints({
 });
 
 export const {
-    useGetProductsQuery,
-    useGetProductsCategoryQuery,
-    useGetProductsCategoriesQuery,
+    useGetParamsProductsQuery,
+    useGetCategoriesQuery,
+    useGetProductByIdQuery,
     useCreateProductMutation,
     useDeleteProductMutation,
     useUpdateProductMutation,

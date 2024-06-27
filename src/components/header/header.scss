@@ -26,6 +26,23 @@
             gap: 24px;
         }
 
+        &__item {
+            position: relative;
+            svg {
+                font-size: 18px;
+            }
+
+            sup {
+                position: absolute;
+                top: -6px;
+                right: -8px;
+                padding: 0px 4px;
+                color: #fff;
+                background: #33a0ff;
+                border-radius: 8px;
+            }
+        }
+
         &__input {
             border: none;
             transition: 0.4s;
@@ -100,6 +117,11 @@
             backdrop-filter: blur(3px);
             z-index: 999;
             transition: 0.3s;
+        }
+        @media (max-width: 1000px) {
+            &__link {
+                font-size: 16px;
+            }
         }
         @media (max-width: 750px) {
             &__list {
