@@ -20,7 +20,7 @@ const Products = ({ product }) => {
     let wishlistData = useSelector((state) => state.wishlist.value);
     let cartData = useSelector((state) => state.cart.value);
 
-    function getRating() {
+    function getRating(id) {
         let res = [];
         for (let i = 0; i < Math.trunc(rating); i++) {
             res.push(<FaStar key={i} color="gold" />);
