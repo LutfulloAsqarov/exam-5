@@ -13,6 +13,7 @@ import FeaturedProducts from "./featuredProducts";
 import Pagination from "@mui/material/Pagination";
 import Service from "./service";
 import { Box } from "@mui/material";
+import Loading from "../../components/loading";
 
 const Home = () => {
     const [categoryValue, setCategoryValue] = useState("all");
@@ -23,7 +24,7 @@ const Home = () => {
     // );
 
     let category = categoryValue === "all" ? "" : "/category/" + categoryValue;
-    let { data: products } = useGetParamsProductsQuery({
+    let { data: products, isLoading } = useGetParamsProductsQuery({
         category,
         limit,
         page: page,
@@ -81,11 +82,22 @@ const Home = () => {
                             {productCategories}
                         </ul>
                     </div>
-                    <div className="products__cards">
-                        {products?.map((product) => (
-                            <Products product={product} key={product.id} />
-                        ))}
-                    </div>
+                    {isLoading ? (
+                        <Loading />
+                    ) : (
+                        <div className="products__cards">
+                            {products?.map((product) => (
+                                <Products product={product} key={product.id} />
+                            ))}
+                        </div>
+                    )}
+                    <button
+                        disabled={isLoading}
+                        className="products__see-more"
+                        onClick={() => setLimit((p) => p + 4)}
+                    >
+                        Load more
+                    </button>
                 </div>
                 <Box
                     sx={{ display: "flex", justifyContent: "center" }}

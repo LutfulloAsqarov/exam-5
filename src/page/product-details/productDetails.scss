@@ -218,4 +218,30 @@
             }
         }
     }
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+    }
+    @media (max-width: 700px) {
+        &__left {
+            &__top {
+                grid-template-columns: 1fr;
+            }
+        }
+        &__images {
+            width: 50%;
+            margin: 0 auto;
+            a {
+                img {
+                    width: 80%;
+                }
+            }
+        }
+    }
+    @media (max-width: 500px) {
+        &__left {
+            &__bot {
+                display: none;
+            }
+        }
+    }
 }

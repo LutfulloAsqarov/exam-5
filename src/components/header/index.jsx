@@ -55,34 +55,32 @@ const Header = () => {
                         </select>
                     </div>
                     <div className="header__top__right">
-                        <ul className="header__top__list">
-                            <li className="header__top__item">
-                                <Link>
-                                    <FaUser />
-                                </Link>
-                            </li>
-                            <li className="header__top__item">
-                                <Link to={"/wishlist"}>
-                                    <FaRegHeart />
+                        <li className="header__top__item">
+                            <Link to={"/login"}>
+                                <FaUser />
+                            </Link>
+                        </li>
+                        <li className="header__top__item">
+                            <Link to={"/wishlist"}>
+                                <FaRegHeart />
 
-                                    {wishlistData.length ? (
-                                        <sup>{wishlistData.length}</sup>
-                                    ) : (
-                                        <></>
-                                    )}
-                                </Link>
-                            </li>
-                            <li className="header__top__item">
-                                <Link to={"/cart"}>
-                                    <FaShoppingCart />
-                                    {cartData.length ? (
-                                        <sup>{cartData.length}</sup>
-                                    ) : (
-                                        <></>
-                                    )}
-                                </Link>
-                            </li>
-                        </ul>
+                                {wishlistData.length ? (
+                                    <sup>{wishlistData.length}</sup>
+                                ) : (
+                                    <></>
+                                )}
+                            </Link>
+                        </li>
+                        <li className="header__top__item">
+                            <Link to={"/cart"}>
+                                <FaShoppingCart />
+                                {cartData.length ? (
+                                    <sup>{cartData.length}</sup>
+                                ) : (
+                                    <></>
+                                )}
+                            </Link>
+                        </li>
                         <form className="header__top__form">
                             <input
                                 value={inputValue}
@@ -124,12 +122,18 @@ const Header = () => {
                             showBar ? "header__bot__show-bar" : ""
                         }`}
                     >
-                        <li className="header__bot__items">
+                        <li
+                            className="header__bot__items"
+                            onClick={() => setShowBar(false)}
+                        >
                             <NavLink className={"header__bot__link"} to={"/"}>
                                 <span>HOME</span>
                             </NavLink>
                         </li>
-                        <li className="header__bot__items">
+                        <li
+                            className="header__bot__items"
+                            onClick={() => setShowBar(false)}
+                        >
                             <NavLink
                                 className={"header__bot__link"}
                                 to={"/bags"}
@@ -137,7 +141,10 @@ const Header = () => {
                                 <span>BAGS</span>
                             </NavLink>
                         </li>
-                        <li className="header__bot__items">
+                        <li
+                            className="header__bot__items"
+                            onClick={() => setShowBar(false)}
+                        >
                             <NavLink
                                 className={"header__bot__link"}
                                 to={"/sneakers"}
@@ -145,7 +152,10 @@ const Header = () => {
                                 <span>SNEAKERS</span>
                             </NavLink>
                         </li>
-                        <li className="header__bot__items">
+                        <li
+                            className="header__bot__items"
+                            onClick={() => setShowBar(false)}
+                        >
                             <NavLink
                                 className={"header__bot__link"}
                                 to={"/belt"}
@@ -153,7 +163,10 @@ const Header = () => {
                                 <span>BELT</span>
                             </NavLink>
                         </li>
-                        <li className="header__bot__items">
+                        <li
+                            className="header__bot__items"
+                            onClick={() => setShowBar(false)}
+                        >
                             <NavLink
                                 className={"header__bot__link"}
                                 to={"/contact"}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
@@ -7,10 +7,13 @@ import { FaStarHalfAlt } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { FaHeart } from "react-icons/fa";
+import { IoCartOutline } from "react-icons/io5";
+import { IoCart } from "react-icons/io5";
 
 import "./products.scss";
 import { toggleHeart } from "../../context/slice/wishlistSlice";
 import { addToCart } from "../../context/slice/cartSlice";
+
 // import wishlistSlice from "../../context/slice/wishlistSlice";
 
 const Products = ({ product }) => {
@@ -35,20 +38,26 @@ const Products = ({ product }) => {
     }
 
     return (
-        <div key={product.id} className="products__card">
+        <div key={product.id} className="products__card" data-aos="fade-right">
             <div className="products__card__img">
                 <Link>
                     <img src={product.image} alt="" />
                 </Link>
                 <div className="products__card__btns">
                     <button onClick={() => dispatch(addToCart(product))}>
-                        <FaShoppingCart />
+                        {cartData.some((el) => el.id === product.id) ? (
+                            <IoCart style={{ fontSize: "16px" }} />
+                        ) : (
+                            <IoCartOutline style={{ fontSize: "16px" }} />
+                        )}
                     </button>
                     <button onClick={() => dispatch(toggleHeart(product))}>
                         {wishlistData.some((el) => el.id === product.id) ? (
-                            <FaHeart style={{ color: "crimson" }} />
+                            <FaHeart
+                                style={{ color: "crimson", fontSize: "16px" }}
+                            />
                         ) : (
-                            <FaRegHeart />
+                            <FaRegHeart style={{ fontSize: "16px" }} />
                         )}
                     </button>
                 </div>

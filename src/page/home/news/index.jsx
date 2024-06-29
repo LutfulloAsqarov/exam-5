@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import new1 from "../../../assets/news/news1.svg";
 import new2 from "../../../assets/news/news2.svg";
 import new3 from "../../../assets/news/news3.svg";
@@ -9,7 +9,7 @@ const News = () => {
         <div className="news container">
             <h2 className="section__title">LATEST NEWS</h2>
             <div className="news__cards">
-                <div className="news__card">
+                <div className="news__card" data-aos="fade-right">
                     <div className="news__img">
                         <img src={new1} alt="" />
                     </div>
@@ -22,7 +22,11 @@ const News = () => {
                         </p>
                     </div>
                 </div>
-                <div className="news__card">
+                <div
+                    className="news__card"
+                    data-aos="fade-right"
+                    data-aos-delay="100"
+                >
                     <div className="news__img">
                         <img src={new2} alt="" />
                     </div>
@@ -35,7 +39,11 @@ const News = () => {
                         </p>
                     </div>
                 </div>
-                <div className="news__card">
+                <div
+                    className="news__card"
+                    data-aos="fade-right"
+                    data-aos-delay="200"
+                >
                     <div className="news__img">
                         <img src={new3} alt="" />
                     </div>

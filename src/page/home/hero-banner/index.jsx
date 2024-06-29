@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HERO_BANNER } from "../../../static";
 import "./heroBanner.scss";
 
@@ -6,6 +6,7 @@ const HeroBanner = () => {
     let bannerCard = HERO_BANNER?.map((card) => (
         <div
             key={card.id}
+            data-aos="fade-left"
             className="banner__card"
             style={{
                 backgroundImage: `url(${card.bg})`,

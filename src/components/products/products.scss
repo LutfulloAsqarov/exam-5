@@ -8,6 +8,23 @@
         gap: 30px;
         padding: 30px 0;
     }
+    &__see-more {
+        padding: 10px 15px;
+        border: none;
+        background: #33a0ff;
+        color: #fff;
+        margin: 10px auto;
+        display: block;
+        border-radius: 5px;
+
+        &:hover {
+            opacity: 0.8;
+        }
+        &:disabled {
+            opacity: 1;
+            background: #7fc0f9;
+        }
+    }
     &__card {
         border: 3px solid #f6f7f8;
         border-radius: 5px;

@@ -11,7 +11,7 @@ export const userApi = api.injectEndpoints({
         }),
         signIn: build.mutation({
             query: (body) => ({
-                url: "/auth/sign-in",
+                url: "/auth/login",
                 method: "POST",
                 body,
             }),
@@ -19,7 +19,7 @@ export const userApi = api.injectEndpoints({
         }),
         registerUser: build.mutation({
             query: (body) => ({
-                url: "/auth/sign-up",
+                url: "/auth/login",
                 method: "POST",
                 body,
             }),

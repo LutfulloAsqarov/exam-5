@@ -13,8 +13,10 @@ import "./featuredProducts.scss";
 import { Autoplay, FreeMode, Pagination } from "swiper/modules";
 
 const FeaturedProducts = () => {
-    const { data, isLoading, isSuccess } = useGetParamsProductsQuery();
-    const featureItem = data?.slice(0, 5).map((el) => (
+    const { data, isLoading, isSuccess } = useGetParamsProductsQuery({
+        category: "/",
+    });
+    const featureItem = data?.slice(0, 20).map((el) => (
         <SwiperSlide key={el.id}>
             <div className="feature__card">
                 <div className="feature__img">
@@ -45,6 +47,7 @@ const FeaturedProducts = () => {
             <h3 className="feature__title">FEATURED PRODUCTS</h3>
             <Swiper
                 slidesPerView={1}
+                slidesPerGroup={1}
                 spaceBetween={30}
                 freeMode={true}
                 loop={true}
